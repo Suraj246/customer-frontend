@@ -25,7 +25,8 @@ function App() {
 
   // get data from backend
   useEffect(() => {
-    axios.get('http://localhost:5000/')
+    // axios.get('http://localhost:5000/')
+    axios.get('https://customer-backend-mwab.onrender.com')
       .then((res) => {
         setData(res?.data?.products)
       })

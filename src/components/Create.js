@@ -17,7 +17,8 @@ const Create = () => {
             alert("fill the boxes")
             return
         }
-        axios.post('http://localhost:5000/api/create', { input, city: selected })
+        // axios.post('http://localhost:5000/api/create', { input, city: selected })
+        axios.post('https://customer-backend-mwab.onrender.com/api/create', { input, city: selected })
             .then((res) => {
                 window.location.reload()
                 setInput({ customer: '', email: '' })

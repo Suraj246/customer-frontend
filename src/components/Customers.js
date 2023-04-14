@@ -6,7 +6,8 @@ const Customers = ({ data }) => {
     // delete data on user click
     const deleteItem = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/delete/${id}`)
+            // await axios.delete(`http://localhost:5000/delete/${id}`)
+            await axios.delete(`https://customer-backend-mwab.onrender.com/delete/${id}`)
             window.location.reload()
 
         } catch (error) {
