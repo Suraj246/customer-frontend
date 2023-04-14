@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 const Create = () => {
     const [input, setInput] = useState({ customer: "", email: "", })
@@ -10,6 +10,8 @@ const Create = () => {
         const { value, name } = e.target
         setInput({ ...input, [name]: value })
     }
+
+    // create customer
     const submit = (e) => {
         if (input.customer === '' || input.email === '') {
             alert("fill the boxes")
@@ -57,7 +59,7 @@ const Create = () => {
                     <div className="dropdown-container">
                         <label>City</label>
 
-                        <div className="dropdown" onClick={(e) => setIsActive(!isActive)}>
+                        <div className="dropdown" onClick={() => setIsActive(!isActive)}>
                             {selected ?
                                 <>
                                     <div className="dropdown-btn" >{selected}</div>
