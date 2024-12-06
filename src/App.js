@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
 function App() {
+  const [input, setInput] = useState({ customer: "", email: "", })
 
   const [isActive, setIsActive] = useState(false)
   const [selected, setSelected] = useState('')
@@ -14,13 +15,6 @@ function App() {
   const arr = new Set([])
   data.filter((item) => arr.add(item.city))
   const array = [...arr];
-
-  // get reversed array
-  let reversed_array = [];
-  for (let i = data.length - 1; i >= 0; i--) {
-    reversed_array.push(data[i]);
-  }
-
 
 
   // get data from backend
@@ -43,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <Create />
+      <Create input={input} setInput={setInput} />
       <div className='filter-container'>
         <div className='filtertitle'>
           <span>Customers</span>
@@ -105,23 +99,6 @@ function App() {
                     }
                   </div>
 
-                  {/* {data?.map((option, idx) => {
-                    return (
-                      <div className="dropdown-item"
-                        key={idx}
-                        onClick={e => {
-                          setSelected(option?.city)
-                          setIsActive(false)
-                        }}
-                      >
-                        <span onClick={() => filterItems(option?.city)}
-                        >
-                          {option?.city}
-                        </span>
-                      </div>
-                    )
-                  })} */}
-
                 </div>
               }
             </div>
@@ -130,7 +107,7 @@ function App() {
         </div>
       </div>
       <div className="customer-container">
-        <Customers data={reversed_array} />
+        <Customers data={data} input={input} />
       </div>
     </div>
   );

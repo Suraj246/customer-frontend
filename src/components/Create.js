@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-const Create = () => {
-    const [input, setInput] = useState({ customer: "", email: "", })
+const Create = ({ input, setInput }) => {
 
     const [isActive, setIsActive] = useState(false)
     const [selected, setSelected] = useState('')
     const [error, setError] = useState(false)
+
     const inputHandler = (e) => {
         const { value, name } = e.target
         setInput({ ...input, [name]: value })
