@@ -68,7 +68,7 @@ function App() {
                 :
                 <div className='filterByCityBox'>
                   <span className="se">Filter by City</span>
-                  <i className='bx bx-chevron-down arrow-city arrow'></i>
+                  <i className='bx bx-chevron-down arrow'></i>
                 </div>
 
               }
