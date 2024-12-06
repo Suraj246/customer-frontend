@@ -44,21 +44,17 @@ function App() {
 
         </div>
         <div className='filter-container-flex'>
-          {selected ?
-            <div className='emailerror-container'>
-              <button className='remove-filter' onClick={() => window.location.reload()}>
-                <img src="/img/remove.png" alt="" className='remove' />
-                <span> Remove filter </span>
-              </button>
-            </div>
-            :
-            <div className='emailerror-container none'>
-              <button className='remove-filter'>
-                <img src="/img/remove.png" alt="" className='remove' />
-                <span> Remove filter </span>
-              </button>
-            </div>
-          }
+          <div>
+            {selected &&
+              <div>
+                <button className='remove-filter' onClick={() => window.location.reload()}>
+                  <img src="/img/remove.png" alt="" className='remove' />
+                  <span> Remove filter </span>
+                </button>
+              </div>
+
+            }
+          </div>
 
           <div className="dropdown-container">
 
@@ -70,10 +66,10 @@ function App() {
                 </>
 
                 :
-                <>
+                <div className='filterByCityBox'>
                   <span className="se">Filter by City</span>
                   <i className='bx bx-chevron-down arrow-city arrow'></i>
-                </>
+                </div>
 
               }
               {isActive &&
